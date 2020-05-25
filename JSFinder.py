@@ -17,6 +17,8 @@ def parse_args():
     parser.add_argument("-os", "--outputsubdomain", help="Output file name. ")
     parser.add_argument("-j", "--js", help="Find in js file", action="store_true")
     parser.add_argument("-d", "--deep",help="Deep find", action="store_true")
+    if len(sys.argv[1:]) == 0:
+        return parser.parse_args(["-h"])
     return parser.parse_args()
 
 # Regular expression comes from https://github.com/GerbenJavado/LinkFinder
